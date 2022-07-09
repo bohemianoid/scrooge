@@ -1,0 +1,2 @@
+# scrooge
+Replicate Beancount transactions
