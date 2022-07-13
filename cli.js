@@ -45,15 +45,31 @@ for (const [index, line] of lines.entries()) {
         console.log(`\n🫘 ${transaction[1]}`);
         console.log(`${lines[index + 1]}`);
 
-        /* eslint-disable-next-line no-await-in-loop */
-        const answer = await inquirer.prompt([{
-            type: 'autocomplete',
-            name: 'account',
-            message: 'Account',
-            source: searchAccounts,
-        }]);
+        let addPosting = true;
+        let postingIndex = 2;
 
-        lines.splice(index + 2, 0, `  ${answer.account}`);
+        while (addPosting) {
+            /* eslint-disable-next-line no-await-in-loop */
+            const answers = await inquirer.prompt([
+                {
+                    type: 'autocomplete',
+                    name: 'account',
+                    message: 'Account',
+                    source: searchAccounts,
+                },
+                {
+                    type: 'confirm',
+                    name: 'addPosting',
+                    message: 'Add additional posting?',
+                    default: false,
+                },
+            ]);
+
+            lines.splice(index + postingIndex, 0, `  ${answers.account}`);
+
+            addPosting = answers.addPosting;
+            postingIndex++;
+        }
 
         /* eslint-disable-next-line no-await-in-loop */
         await writeFile(cli.input[0], lines.join('\n'));
