@@ -43,13 +43,13 @@ describe('scrooge', () => {
 2020-01-02 balance Assets:US:BofA:Checking        3308.12 USD
 
 2020-01-04 * "BANK FEES" "Monthly bank fee"
-  Assets:US:BofA:Checking                           -4.00 USD
+  Assets:US:BofA:Checking                           -4 USD
 
 2020-01-04 * "RiverBank Properties" "Paying the rent"
-  Assets:US:BofA:Checking                        -2400.00 USD
+  Assets:US:BofA:Checking                        -2400 USD
 
 2020-01-09 * "EDISON POWER" ""
-  Assets:US:BofA:Checking                          -65.00 USD
+  Assets:US:BofA:Checking                          -65 USD
 
 2020-01-18 * "Verizon Wireless" ""
   Assets:US:BofA:Checking                          -69.56 USD

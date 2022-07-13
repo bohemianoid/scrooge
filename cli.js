@@ -37,6 +37,11 @@ for (const [index, line] of lines.entries()) {
 
     const transaction = line.match(/\d+-\d+-\d+ \* "(.+)"/);
     if (transaction && !lines[index + 2]) {
+        lines[index + 1] = lines[index + 1].replace(
+            /(\d+)(\.)?(\d+)?/,
+            (match, p1, p2, p3) => p1 + '.' + (p3 ? p3.padEnd(2, '0') : '00'),
+        );
+
         console.log(`\n🫘 ${transaction[1]}`);
         console.log(`${lines[index + 1]}`);
 
