@@ -1,0 +1,35 @@
+{
+  "name": "scrooge",
+  "version": "0.1.0",
+  "description": "Replicate Beancount transactions",
+  "type": "module",
+  "bin": "./cli.js",
+  "scripts": {
+    "test": "xo && NODE_OPTIONS=--experimental-vm-modules jest"
+  },
+  "repository": "bohemianoid/scrooge",
+  "keywords": [
+    "cli",
+    "beancount"
+  ],
+  "author": "Simon Häfliger <contact@simonhaefliger.ch> (https://simonhaefliger.ch)",
+  "license": "MIT",
+  "dependencies": {
+    "fuse.js": "^6.6.2",
+    "inquirer": "^8.2.3",
+    "inquirer-autocomplete-prompt": "^2.0.0",
+    "meow": "^10.1.3"
+  },
+  "devDependencies": {
+    "@gmrchk/cli-testing-library": "^0.1.2",
+    "jest": "^28.1.2",
+    "xo": "^0.50.0"
+  },
+  "xo": {
+    "envs": [
+      "node",
+      "jest"
+    ],
+    "space": 4
+  }
+}
